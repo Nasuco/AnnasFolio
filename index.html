@@ -70,9 +70,9 @@
       <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
       <div id="Date" class="date" onload="showTime()"></div>
     </div>
-    <p>Jumlah Pengunjung: <span id="visitorCount"></span></p>
     
   </section><!-- End Hero -->
+  <p>Jumlah Pengunjung: <span id="visitorCount"></span></p>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   
@@ -789,7 +789,7 @@
     gtag('event', 'page_view', {
         'send_to': 'G-DEMJGLSVQ9',
         'event_callback': function() {
-            var visitorCount = gtag('get', 'config', 'YOUR_GA_TRACKING_ID', 'page_view').length;
+            var visitorCount = gtag('get', 'config', 'G-DEMJGLSVQ9', 'page_view').length;
             document.getElementById('visitorCount').innerText = visitorCount;
         }
     });
