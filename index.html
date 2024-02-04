@@ -12,16 +12,11 @@
   
     // Fetch visitor count from Google Tag Manager (replace with your actual data fetching method)
     function fetchVisitorCount() {
-      // Replace with your logic to retrieve visitor count from GTM or another source
-      // For example, you might use a dataLayer variable or a custom tag
-      // You can use Google Tag Manager's preview mode to verify data availability
-      fetch('/api/visitor-count') // Replace with your endpoint
-        .then(response => response.json())
-        .then(data => {
-          const visitorCount = data.visitorCount; // Assuming the response contains a visitorCount property
-          document.getElementById('visitorCount').textContent = visitorCount;
-        });
-    }
+      const visitorCount = window.dataLayer.find(item => item.event === 'visitorCount')?.visitorCount;
+      if (visitorCount) {
+        document.getElementById('visitorCount').textContent = visitorCount;
+      }
+    }    
   
     // Call the function to fetch and display count initially
     fetchVisitorCount();
