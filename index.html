@@ -10,16 +10,6 @@
     gtag('js', new Date());
 
     gtag('config', 'G-DEMJGLSVQ9');
-
-    gtag('event', 'page_view', {
-        'send_to': 'G-DEMJGLSVQ9',
-        'event_callback': function() {
-            // Dapatkan data pengunjung
-            var visitorCount = gtag('get', 'config', 'G-DEMJGLSVQ9', 'page_view').length;
-
-            document.getElementById('visitorCount').innerText = "Pengunjung: " + visitorCount;
-        }
-    });
   </script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
