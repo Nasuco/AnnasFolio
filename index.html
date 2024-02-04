@@ -6,24 +6,19 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEMJGLSVQ9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-DEMJGLSVQ9');
 
-    // Mengambil jumlah pengunjung dan memperbarui elemen dengan ID 'visitorCount'
     function updateVisitorCount() {
         var userObject = gtag('get', 'G-DEMJGLSVQ9', 'user');
-        console.log(userObject);  // Tambahkan log ini untuk melihat nilai objek 'user' di konsol.
         var visitorCount = userObject ? userObject.totalUsers : 0;
-        
+
+        document.getElementById('visitorCount').innerText = "Pengunjung: " + visitorCount;
     }
 
-    // Memanggil fungsi updateVisitorCount saat halaman dimuat dan saat ada peristiwa page_view
     window.addEventListener('load', updateVisitorCount);
-    gtag('event', 'page_view', {
-        'send_to': 'G-DEMJGLSVQ9',
-        'event_callback': updateVisitorCount
-    });
   </script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
