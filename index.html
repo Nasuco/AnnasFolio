@@ -8,21 +8,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-DEMJGLSVQ9');
-  
-    // Fetch visitor count from Google Tag Manager (replace with your actual data fetching method)
-    function fetchVisitorCount() {
-      const visitorCount = window.dataLayer.find(item => item.event === 'visitorCount')?.visitorCount;
-      if (visitorCount) {
-        document.getElementById('visitorCount').textContent = visitorCount;
-      }
-    }    
-  
-    // Call the function to fetch and display count initially
-    fetchVisitorCount();
-  
-    // Optionally, set up an interval to refresh the count periodically
-    setInterval(fetchVisitorCount, 60000); // Refresh every minute
   </script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -61,7 +48,7 @@
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <!-- <button onclick="changeLanguage()">Change Language</button> -->
-        <li><a class="nav-link scrollto"><span id="visitorCount">Pengunjung</span></a></li>
+        <!-- <li><a class="nav-link scrollto"><span id="visitorCount">Pengunjung</span></a></li> -->
         <li><a href="#particles-js" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
         <li><a href="#facts" class="nav-link scrollto"><i class="bx bx-wrench"></i> <span>Skills</span></a></li>
