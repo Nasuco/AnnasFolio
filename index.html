@@ -8,17 +8,19 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-DEMJGLSVQ9');
 
+    // Mengambil jumlah pengunjung dan memperbarui elemen dengan ID 'visitorCount'
+    function updateVisitorCount() {
+        var visitorCount = gtag('get', 'G-DEMJGLSVQ9', 'user').totalUsers;
+        document.getElementById('visitorCount').innerText = "Pengunjung: " + visitorCount;
+    }
+
+    // Memanggil fungsi updateVisitorCount saat halaman dimuat dan saat ada peristiwa page_view
+    window.addEventListener('load', updateVisitorCount);
     gtag('event', 'page_view', {
         'send_to': 'G-DEMJGLSVQ9',
-        'event_callback': function () {
-            // Dapatkan data pengunjung
-            var visitorCount = gtag('get', 'G-DEMJGLSVQ9', 'user').totalUsers;
-
-            document.getElementById('visitorCount').innerText = "Pengunjung: " + visitorCount;
-        }
+        'event_callback': updateVisitorCount
     });
   </script>
   <meta charset="utf-8">
