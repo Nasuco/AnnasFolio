@@ -12,8 +12,10 @@
 
     // Mengambil jumlah pengunjung dan memperbarui elemen dengan ID 'visitorCount'
     function updateVisitorCount() {
-        var visitorCount = gtag('get', 'G-DEMJGLSVQ9', 'user').totalUsers;
-        document.getElementById('visitorCount').innerText = "Pengunjung: " + visitorCount;
+        var userObject = gtag('get', 'G-DEMJGLSVQ9', 'user');
+        console.log(userObject);  // Tambahkan log ini untuk melihat nilai objek 'user' di konsol.
+        var visitorCount = userObject ? userObject.totalUsers : 0;
+        
     }
 
     // Memanggil fungsi updateVisitorCount saat halaman dimuat dan saat ada peristiwa page_view
